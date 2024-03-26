@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto - Detalhes</title>
+</head>
+<body>
+    <form id="update">
+        <header>Cadastro de Produtos</header>
+        <div>
+            <div><label>Nome</label></div>
+            <input type="text" id="item" required/>
+        </div>
+        <div>
+            <div><label>Preço</label></div>
+            <input type="text" id="price" required/>
+        </div>
+        <div>
+            <div><label>Descrição</label></div>
+            <textarea type="text" id="description" required></textarea>  
+        </div>
+        <div>
+            <button type="submit">Atualizar</button>
+        </div>
+    </form>
+    <div>
+        <button onclick=deleteProduct()>Deletar</button>
+    </div>
+
+    <script src="produto-detalhe.js"></script>
+</body>
+</html>
