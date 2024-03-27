@@ -14,15 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const index = productList.findIndex(product => product.name === getQueryParam('product'));
 
         if (index !== -1) {
-            productList.splice(index, 1);
+            productList[index].name = document.getElementById('item').value;
+            productList[index].price = 'R$'+document.getElementById('price').value;
+            productList[index].description= document.getElementById('description').value;
+        }else{
+            alert("Erro ao atualizar.")
+            return
         }
-
-        // Adiciona o item a lista
-        productList.push({
-            name: document.getElementById('item').value,
-            price: 'R$'+document.getElementById('price').value,
-            description: document.getElementById('description').value
-        });
 
         // Serializa a lista e salva no localStorage
         localStorage.setItem('productList', JSON.stringify(productList));
