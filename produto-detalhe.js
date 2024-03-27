@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (index !== -1) {
             productList[index].name = document.getElementById('item').value;
-            productList[index].price = 'R$'+document.getElementById('price').value;
+            productList[index].price = document.getElementById('price').value;
             productList[index].description= document.getElementById('description').value;
         }else{
             alert("Erro ao atualizar.")
