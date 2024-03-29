@@ -1,3 +1,4 @@
+//Round 2
 //Espera todos elementos carregarem para poder executar o JS
 document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem('productList') === null) { //Se nao existir uma lista
