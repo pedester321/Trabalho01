@@ -1,10 +1,10 @@
-import { DatabaseLocalStorage } from "./database-local"
+import {DatabaseLocalStorage} from './database-local.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('cadastro').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent the form from submitting in the traditional way
         
-        const database = new DatabaseLocalStorage
+        const database = new DatabaseLocalStorage()
 
         // Pega os dados do form
         const productName = document.getElementById('item').value;

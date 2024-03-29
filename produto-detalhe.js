@@ -1,10 +1,10 @@
-import { DatabaseLocalStorage } from "./database-local"
+import {DatabaseLocalStorage} from './database-local.js';
 
 document.addEventListener('DOMContentLoaded', function() {
 
     const database = new DatabaseLocalStorage
-    const productList = database.getProducts
-    const id = getQueryParam('id')
+    const productList = database.getProducts()
+    const product = productList[getQueryParam('id')]
 
     document.getElementById('item').value = product.name
     document.getElementById('price').value = product.price
@@ -13,13 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('update').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        const updatedProduct = [
-            {
+        const updatedProduct = {
                 name: document.getElementById('item').value,
                 price: document.getElementById('price').value,
                 description: document.getElementById('description').value
-            },
-        ]
+            }
 
         try {
             database.updateProduct(id,updatedProduct)
@@ -29,15 +27,21 @@ document.addEventListener('DOMContentLoaded', function() {
             alert(error)
         }
     })
+    const deleteButton = document.getElementById('delete');
+    if (deleteButton) { 
+        deleteButton.addEventListener('click', function() {
+            
+            database.deleteProduct(getQueryParam('id'))
+            window.location.href= 'index.html'
+            console.log('Delete button clicked');
+        });
+    } else {
+        console.log('Delete button not found');
+    }
 })
 
-function deleteAction(){
-    const database = new DatabaseLocalStorage
-    database.deleteProduct(getQueryParam('id'))
-    window.location.href= 'index.html' // voltando a pagina inicial
-}
-
-function getQueryParam(param) { //Pega parametro passado na URI
+//Pega parametro passado na URI
+function getQueryParam(param) { 
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     return urlParams.get(param);

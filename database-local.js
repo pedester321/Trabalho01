@@ -1,9 +1,9 @@
 export class DatabaseLocalStorage{
-    #products = JSON.parse(localStorage.getItem('productList')) || [{ name: 'Elemento de testes', price: 'R$2', description: 'Un teste' },]
+    #products = JSON.parse(localStorage.getItem('productList')) || [{ name: 'Elemento de testes', price: 'R$2', description: 'Un teste' }]
 
     //create
     addProduct(product){
-        this.#products.add(product)
+        this.#products.push(product)
         this.saveLocalstorage
     }
 
@@ -27,5 +27,9 @@ export class DatabaseLocalStorage{
     //serealiza e salva a lista no local storage
     saveLocalstorage(){
         localStorage.setItem('productList', JSON.stringify(this.#products))
+    }
+
+    loadLocalStorage(){
+        this.#products = JSON.parse(localStorage.getItem('productList'))
     }
 }
