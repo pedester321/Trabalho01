@@ -1,5 +1,6 @@
 export class DatabaseLocalStorage{
-    #products = JSON.parse(localStorage.getItem('productList')) || [{ name: 'Elemento de testes', price: 'R$2', description: 'Un teste' }]
+    //Cria ou carrega um vetor de objetos que sera a lista de produtos
+    #products = JSON.parse(localStorage.getItem('productList')) || [{ name: 'Elemento de testes', price: 'R$2', description: 'Um teste' }]
 
     //create
     addProduct(product){
@@ -25,10 +26,12 @@ export class DatabaseLocalStorage{
     }
 
     //serealiza e salva a lista no local storage
+    //Usado para manter a lista atualizada entre as operacoes
     saveLocalstorage(){
         localStorage.setItem('productList', JSON.stringify(this.#products))
     }
 
+    //Vai que precisa kk
     loadLocalStorage(){
         this.#products = JSON.parse(localStorage.getItem('productList'))
     }

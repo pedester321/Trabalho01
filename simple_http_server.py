@@ -2,6 +2,8 @@
 import http.server
 import socketserver
 
+#Um servidor simples em python para poder servir as paginas no localhost
+
 PORT = 8000
 
 class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
