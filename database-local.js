@@ -4,7 +4,7 @@ export class DatabaseLocalStorage{
     //create
     addProduct(product){
         this.#products.push(product)
-        this.saveLocalstorage
+        this.saveLocalstorage()
     }
 
     //read
@@ -13,15 +13,15 @@ export class DatabaseLocalStorage{
     }
 
     //update
-    updateProduct(id,product){
+    updateProduct(id, product){
         this.#products[id] = product
-        this.saveLocalstorage
+        this.saveLocalstorage()
     }
 
     //delete
     deleteProduct(id){
         this.#products.splice(id,1)
-        this.saveLocalstorage
+        this.saveLocalstorage()
     }
 
     //serealiza e salva a lista no local storage

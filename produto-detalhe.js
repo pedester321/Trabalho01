@@ -4,30 +4,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const database = new DatabaseLocalStorage
     const productList = database.getProducts()
-    const product = productList[getQueryParam('id')]
+    const product = productList[getQueryParam(getQueryParam('id'))]
 
     document.getElementById('item').value = product.name
     document.getElementById('price').value = product.price
     document.getElementById('description').value = product.description
 
-    document.getElementById('update').addEventListener('submit', function(event) {
-        event.preventDefault();
+    const updateButton = document.getElementById('update')
+    const deleteButton = document.getElementById('delete')
 
-        const updatedProduct = {
+    if (updateButton) { 
+        updateButton.addEventListener('click', function() {
+            const updatedProduct = {
                 name: document.getElementById('item').value,
                 price: document.getElementById('price').value,
                 description: document.getElementById('description').value
             }
-
-        try {
+            const id = getQueryParam('id')
             database.updateProduct(id,updatedProduct)
             alert('O produto foi atualizado com sucesso!');
             window.location.href= 'index.html' // voltando a pagina inicial
-        } catch (error) {
-            alert(error)
-        }
-    })
-    const deleteButton = document.getElementById('delete');
+        });
+    } else {
+        console.log('update button error');
+    }
+
     if (deleteButton) { 
         deleteButton.addEventListener('click', function() {
             
