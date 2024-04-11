@@ -3,10 +3,10 @@ import {DatabaseLocalStorage} from './database-local.js';
 document.addEventListener('DOMContentLoaded', function() {
 
     
-    const database = new DatabaseLocalStorage //Cria um instancia do banco de dados
+    const database = new DatabaseLocalStorage() //Cria um instancia do banco de dados
     const id = getQueryParam('id') //Pega o parametro id
     const productList = database.getProducts() //Pega os produtos
-    const product = productList[getQueryParam(id)] //Pega o produto passado pelo parametro id na URI
+    const product = productList[id] //Pega o produto passado pelo parametro id na URI
 
     //Preenche todos os campos do formulario
     document.getElementById('item').value = product.name
