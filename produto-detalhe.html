@@ -4,29 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produto - Detalhes</title>
+    <link rel="stylesheet" href="produto.css">
 </head>
 <body>
+    <header class="header">
+        <h1>GroupStore</h1>
     
-    <header>Cadastro de Produtos</header>
-    <div>
-        <div><label>Nome</label></div>
-        <input type="text" id="item" required/>
+    </header>
+    <div class="content-wrap">
+        <form>
+            <div>
+                <div><label>Nome</label></div>
+                <input type="text" id="item" required/>
+            </div>
+            <div>
+                <div><label>Preço</label></div>
+                <input type="text" id="price" required/>
+            </div>
+            <div>
+                <div><label>Descrição</label></div>
+                <textarea type="text" id="description" required></textarea>  
+            </div>
+        </form>
+        <div class="product-image-container"></div>
     </div>
-    <div>
-        <div><label>Preço</label></div>
-        <input type="text" id="price" required/>
+    <div class="button-container">
+        <button id = "update" class="new-registration">Atualizar</button>
+        <button id="delete" class="new-registration">Deletar</button>
     </div>
-    <div>
-        <div><label>Descrição</label></div>
-        <textarea type="text" id="description" required></textarea>  
-    </div>
-    <div>
-        <button id = "update">Atualizar</button>
-    </div>
-    
-    <div>
-        <button id="delete" >Deletar</button>
-    </div>
+    <footer class="footer"></footer>
 
     <script type="module" src="produto-detalhe.js"></script>
 </body>

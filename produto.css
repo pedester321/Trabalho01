@@ -46,7 +46,9 @@ body {
     text-align: center;
 }
 
-
+.button-container {
+    display: flex;
+}
 
 .content-wrap {
     flex: 1;
@@ -56,16 +58,16 @@ body {
     margin-top: 20px;
 }
 
-form#cadastro {
+form {
     width: 50%; /* Adjust the width as needed */
     margin-right: 20px; /* To give space between the form and the image */
 }
 
-form#cadastro > div {
+form > div {
     margin-bottom: 20px; /* Spacing between form fields */
 }
 
-form#cadastro header {
+form header {
     font-size: 24px; /* Adjust the size as needed */
     margin-bottom: 20px;
     font-weight: bold;
