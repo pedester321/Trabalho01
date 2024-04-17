@@ -1,30 +1,24 @@
 import {DatabaseLocalStorage} from './database-local.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('cadastro').addEventListener('submit', function(event) {
-        event.preventDefault() // Previne o comportamento padrao do submit
-        
-        const database = new DatabaseLocalStorage()
 
-        // Pega os dados do formulario
-        const productName = document.getElementById('item').value;
-        const productPrice = document.getElementById('price').value;
-        const productDescription = document.getElementById('description').value;
-        
-        //Construindo um novo produto
-        const newProduct = {
-            name: productName,
-            price: 'R$'+productPrice, //formatando o din din (da pra melhorar)
-            description: productDescription
-        }
-        
-        try {
-            database.addProduct(newProduct) // Cria um novo produto passando o como parametro
+    const database = new DatabaseLocalStorage()
+    const submitButton = document.getElementById('submit')
 
-            alert("Produto adcionado com sucesso.")
-            window.location.href= 'index.html' //volta para pagina inicial
-        } catch (error) {
-            alert(error)
-        }
-    })
+    if (submitButton) { 
+        submitButton.addEventListener('click', function() {
+
+            //Criando um novo produto com os valores do formulario
+            const newProduct = {
+                name: document.getElementById('item').value,
+                price: document.getElementById('price').value,
+                description: document.getElementById('description').value
+            }
+            database.addProduct(newProduct) //Chama a funcao create passando o produto
+            alert('O produto foi cadastrado com sucesso!')
+            window.location.href= 'index.html' // voltando a pagina inicial
+        })
+    } else {
+        console.log('Submit button not found')
+    }
 })

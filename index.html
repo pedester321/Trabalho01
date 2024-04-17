@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Produtos</title>
-    <link rel="stylesheet" href="gpt.css">
+    <link rel="stylesheet" href="index.css">
 </head>
-<header class="header">
-    <h1>GroupStore</h1>
-    <div class="search-container">
-        <input type="text" class="search-box" placeholder="busque seus cadastros">
-        <button class="search-button"></button>
-    </div>
-</header>
 <body>
-
-
-    <div class="product-list-container">
-        <div id="product-list"></div>        
+    <div class="content-wrap">
+        <header class="header">
+            <h1>GroupStore</h1>
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="busque seus cadastros">
+                <button class="search-button"></button>
+            </div>
+        </header>
+    
+        <div class="product-list-container">
+            <div id="product-list"></div>        
+        </div>
+    
+        
     </div>
-
     
     <div class="button-container">
         <button class="new-registration" onclick="window.location.href='produto-cadastro.html';">Novo Cadastro</button>
     </div>
+    <footer class="footer">
+        
+    </footer>
 
 <script type="module" src="index.js"></script>
 </body>

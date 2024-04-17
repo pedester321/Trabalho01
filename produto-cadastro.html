@@ -4,26 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Produtos - Pedro Castro</title>
+    <link rel="stylesheet" href="produto-cadastro.css">
 </head>
 <body>
-    <form id="cadastro">
-        <header>Cadastro de Produtos</header>
-        <div>
-            <div><label>Nome</label></div>
-            <input type="text" id="item" placeholder="Digite o nome do produto" required/>
-        </div>
-        <div>
-            <div><label>Preço</label></div>
-            <input type="text" id="price" placeholder="R$" required/>
-        </div>
-        <div>
-            <div><label>Descrição</label></div>
-            <textarea type="text" id="description" placeholder="Descreva o produto" required></textarea>  
-        </div>
-        <div>
-            <button type="submit">Cadastrar</button>
-        </div>
-    </form>
+    <header class="header">
+        <h1>GroupStore</h1>
+    
+    </header>
+    <div class="content-wrap">
+        <form id="cadastro">
+            <header>Cadastro de Produtos</header>
+            <div>
+                <div><label>Nome</label></div>
+                <input type="text" id="item" placeholder="Digite o nome do produto" required/>
+            </div>
+            <div>
+                <div><label>Preço</label></div>
+                <input type="text" id="price" placeholder="R$" required/>
+            </div>
+            <div>
+                <div><label>Descrição</label></div>
+                <textarea type="text" id="description" placeholder="Descreva o produto" required></textarea>  
+            </div>
+        </form>
+        <div class="product-image-container"></div>
+    </div>
+    <div>
+        <button class="new-registration" id="submit">Cadastrar</button>
+    </div>
+    <footer class="footer"></footer>
 
 <script type="module" src="produto-cadastro.js"></script> 
 </body>

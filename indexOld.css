@@ -1,0 +1,32 @@
+#product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 200px;
+}
+
+.product-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    color: green;
+    font-weight: bold;
+}
+
+.product-description {
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
