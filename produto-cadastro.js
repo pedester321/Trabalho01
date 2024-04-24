@@ -2,9 +2,10 @@ import {DatabaseLocalStorage} from './database-local.js';
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    const database = new DatabaseLocalStorage()
-    const submitButton = document.getElementById('submit')
+    const database = new DatabaseLocalStorage() //Coletando a instância do BD
+    const submitButton = document.getElementById('submit') // Botão com o ID "Submit"
 
+    //Condicional para verificar existência do botão.
     if (submitButton) { 
         submitButton.addEventListener('click', function() {
 
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 description: document.getElementById('description').value
             }
             database.addProduct(newProduct) //Chama a funcao create passando o produto
-            alert('O produto foi cadastrado com sucesso!')
+            alert('O produto foi cadastrado com sucesso!') //Janela para 
             window.location.href= 'index.html' // voltando a pagina inicial
         })
     } else {
